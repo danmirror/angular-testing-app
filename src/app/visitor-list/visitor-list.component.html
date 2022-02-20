@@ -1,0 +1,84 @@
+<ul class="nav justify-content-center bg-primary navbar-color">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="#">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/input-visitor-details">Input Data</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/visitor-list">Visitor List</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/request-queue-number">Print Queue</a>
+  </li>
+</ul>
+<div class="center mt-4">
+  <div class="container shadow py-4">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">City</th>
+          <th scope="col">No.</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of list_data;index as i">
+          <th scope="row">{{i+1}}</th>
+          <td>{{ data.username }} </td>
+          <td>{{ data.email }} </td>
+          <td>{{ data.city }}</td>
+          <td>{{ data.no }} </td>
+          <button class="btn btn-sm btn-outline-primary mr-2" (click)="edit(content,i)">Edit</button>
+          <button class="btn btn-sm btn-outline-danger" (click)="delete(data._id)">Delete</button>
+        </tr>
+      
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<input [(ngModel)]="id" name="1" [formControl]="id_forms" hidden>
+<input [(ngModel)]="username" name="2" [formControl]="usernames" hidden >
+<input [(ngModel)]="email" name="3" [formControl]="emails" hidden >
+<input [(ngModel)]="city" name="4" [formControl]="citys" hidden >
+<input [(ngModel)]="no" name="5" [formControl]="nos" hidden >
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Update Data</h4>
+    <span (click)="modal.dismiss('Cross click')">
+      <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
+      </svg>
+    </span>
+  </div>
+  <form (submit)="edit_submit()">
+    <div class="modal-body">
+      <input  [(ngModel)]="id" name="1" [formControl]="id_forms" hidden>
+      <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input class="form-control" type="text" [(ngModel)]="username" name="2" [formControl]="usernames">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input class="form-control" type="text"  [(ngModel)]="email" name="3" [formControl]="emails">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">City</label>
+        <input class="form-control" type="text"  [(ngModel)]="city" name="4" [formControl]="citys">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">No.</label>
+        <input class="form-control" type="text"  [(ngModel)]="no" name="5" [formControl]="nos">
+      </div>
+      <!-- <input [(ngModel)]="id" name="3" [formControl]="id_from"> -->
+    </div>
+    <div class="modal-footer">
+      <button type="submit" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+    </div>
+  </form>
+</ng-template>

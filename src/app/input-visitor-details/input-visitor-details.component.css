@@ -1,0 +1,26 @@
+/* @import url('https://unpkg.com/bootstrap@4.5.3/dist/css/bootstrap.min.css');
+.child-1{
+    background-color: orange;
+}
+.child-2{
+    background-color: yellow;
+}
+.child-3{
+    background-color: green;
+}
+
+.container{
+    margin: 15px;
+    height:200px;
+    border:2px solid red;
+} */
+
+.nav a{
+    color: white !important;
+    font-weight: bold;
+}
+.center {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+}

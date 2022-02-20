@@ -1,0 +1,42 @@
+<ul class="nav justify-content-center bg-primary navbar-color">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="#">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/input-visitor-details">Input Data</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/visitor-list">Visitor List</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/request-queue-number">Print Queue</a>
+  </li>
+</ul>
+<div class="mt-5 center">
+  <div class="container shadow py-3">
+
+    <form  #identity="ngForm" (ngSubmit)="onClickSubmit(identity.value)">
+      <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input class="form-control" type="text" name="username" placeholder="username" required ngModel>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input class="form-control" type="text" name="email" placeholder="email" required ngModel> 
+      </div>
+      <div class="mb-3">
+        <label class="form-label">city</label>
+        <input class="form-control" type="text" name="city" placeholder="city" required ngModel> 
+      </div>
+      <div class="mb-3">
+        <label class="form-label">No</label>
+        <input class="form-control" type="text" name="no" placeholder="No telephone" required ngModel> 
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+    
+</div>
+
+    

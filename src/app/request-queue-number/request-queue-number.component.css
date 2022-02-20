@@ -1,0 +1,14 @@
+.nav a{
+    color: white !important;
+    font-weight: bold;
+}
+.center {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+}
+.center-barcode {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}

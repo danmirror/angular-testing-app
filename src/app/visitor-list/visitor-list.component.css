@@ -1,0 +1,9 @@
+.nav a{
+    color: white !important;
+    font-weight: bold;
+}
+.center {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+}
