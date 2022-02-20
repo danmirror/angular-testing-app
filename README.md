@@ -1,7 +1,7 @@
 ## Testing app
 > this app for UI side
 
-## NOTE
+## NOTE Page
 - menu
 > tidak ada perubahan dalam page ini!.
 
